@@ -96,12 +96,15 @@
         }
     }
     
- ## 数据库操作（以删除为例）
- 先在UserDB类中创建删除的方法
+ ## 三、数据库操作（以删除为例）
+ 1.先在UserDB类中创建删除的方法
+ 
     public void delUser(String userId) {
         String delSql = "delete from" + DbConstant.UserTable.TABLE_NAME
                 + "where" + DbConstant.UserTable.USER_ID + "=?";
         mDbManager.operator(delSql, new String[]{userId});
     }
- 之后在Activity中调用：
+    
+ 2.之后在Activity中调用：
+ 
     mUserDB.delUser("2");
